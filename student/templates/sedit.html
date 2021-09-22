@@ -1,0 +1,91 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url_for('auth.logout')}}">Logout</a>
+    </li>
+</ul>
+<form method="POST" action="">
+    <!--Student Details-->
+    <legend class="boarder-bottom nb-4">Student Details</legend>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputRegno">Registration Number</label>
+        <input type="text" class="form-control" name='stdregno' id="inputRegno" value="{{form['regno']}}" readonly>
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputName">Name</label>
+          <input type="text" class="form-control" name='stdname' id="inputName" value="{{form['name']}}" readonly>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputParentName">Parent/Gaurdian Name</label>
+          <input type="text" class="form-control" name='stdpname'id="inputLastName" value="{{form['parentname']}}" readonly>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAge">Age</label>
+          <input type="number" class="form-control" name="stdage" id="inputAge" value="{{form['age']}}" reaonlyd>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputLastName">DOB</label>
+          <input type="date" class="form-control" name="stddob" id="inputDOB" value="{{form['DOB']}}" readonly>
+        </div>
+    </div>
+
+    <!--Education details-->
+    <legend class="boarder-bottom nb-4">Student Details</legend>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputDepartment">Department</label>
+          <input type="text" class="form-control" name="stddept" id="inputDepartment" value="{{form['department']}}" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="inputSemester">PresentSemester</label>
+            <input type="number" class="form-control" name="presem" id="inputSemester" value="{{form['presentsem']}}"  required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputAverageGPA">Avg.GPA</label>
+          <input type="text" class="form-control" name="stdavgpa" id="inputAverageGPA" value="{{form['avggpa']}}" maxlength="3" required>
+        </div>
+    </div>
+
+    <!--For Entering the Contact details-->
+    <legend class="boarder-bottom nb-4">Contact Details</legend>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputPhoneNumber1">Phone</label>
+            <input type="tel" class="form-control" id="inputPhoneNumber" value="{{form['phonenum']}}" readonly>
+          </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress1">Address</label>
+        <input type="text" class="form-control" name='stdaddres' id="inputAddress" value="{{form['addresss']}}" required>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" name='stdcity' id="inputCity" value="{{form['city']}}" required>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputCity">State</label>
+        <input type="text" class="form-control" name='stdstate' id="inputCity" value="{{form['state']}}" required>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">PIN</label>
+        <input type="text" class="form-control" name='stdpin' id="inputZip" value="{{form['PIN']}}" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+        <label class="form-check-label" for="gridCheck">
+          The above given informations are correct accourding to my knowledge
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary ">Save</button>
+</form>
+{% endblock %}
