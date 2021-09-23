@@ -63,9 +63,30 @@ def register():
         
     return render_template('register.html',title = 'register',form = forms)
 
+@auth.route('/admin',methods=['POST', 'GET'])
+def admin():
+    form = AdminLogin()
+    if request.method == 'POST' or form.validate_on_submit():
+        email=form.userid.data
+        password=form.password.data
+        if email == "admin123@gmail.com" and password == 'admin123ispassword':
+            session['id']='Admin'
+            flash('Login Sucessfull',category='success')
+            redirect(url_for('views.full'))
+        else:
+            flash('Incorrect userid or password',category='error')
+    return render_template('adminlogin.html',title='admin',form=form)
+
 @auth.route('/logout',methods=[ 'POST', 'GET']) 
 #@login_required
 def logout():
     session.pop('id', None)
     flash("You have been logged out sucessfully.....")
     return redirect(url_for('auth.login'))
+
+
+@auth.route('/adminlogout',methods=[ 'POST', 'GET']) 
+def adminlogout():
+    session.pop('id', None)
+    flash("You have been logged out sucessfully.....")
+    return redirect(url_for('auth.adminlogin'))
