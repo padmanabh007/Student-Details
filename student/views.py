@@ -83,3 +83,19 @@ def sedit(idn):
 
     return render_template('sedit.html',title = 'change',form = data)
 
+@views.route('/full', methods=['GET', 'POST'])
+def full():
+    if not session.get('id') or session.get('id') != 'Admin':
+        flash('Admin should login to view this page')
+        return redirect(url_for('auth.admin'))
+    c=db.connection.cursor()
+    c.execute("""SELECT * FROM student.student""")
+    data = c.fetchall()
+    if request.method == 'POST':
+        regno=request.form.get('stdregno')
+        c.execute('''DELETE FROM student.student WHERE regno = %s''',(regno,))
+        db.connection.commit()
+        c.close()
+        flash('Details deleted successfully !!')
+        return redirect(url_for('admin.htmil'))
+    return render_template('admin.html',title='Full details',form=data)
