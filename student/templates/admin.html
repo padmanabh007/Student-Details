@@ -1,0 +1,62 @@
+{% extends 'index.html'%}
+{% block content %}
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+      <a class="nav-link active" href="{{url_for('auth.adminlogout')}}">Logout</a>
+    </li>
+</ul>
+<form method="POST" action="">
+    <style>
+        h1{text-align: center;}
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+    <h1>Students Details</h1>
+    
+    <table style="width:100%">
+        <tr>
+          <th>Regno</th>
+          <th>Name</th> 
+          <th>Parent/Guardian Name</th>
+          <th>Age</th>
+          <th>DOB</th> 
+          <th>Department</th>
+          <th>Present Semester</th>
+          <th>Avereage GPA</th> 
+          <th>Phone</th>
+          <th>Address</th>
+          <th>City</th> 
+          <th>State</th>
+          <th>PIN</th>
+        </tr>
+        {% for forms in forms %}
+            <tr>
+            <td>{{forms['regno']}}</td>
+            <td>{{forms['name']}}</td>
+            <td>{{forms['parentname']}}</td>
+            <td>{{forms['age']}}</td>
+            <td>{{forms['DOB']}}</td>
+            <td>{{forms['department']}}</td>
+            <td>{{forms['presentsem']}}</td>
+            <td>{{forms['phonenum']}}</td>
+            <td>{{forms['avggpa']}}</td>
+            <td>{{forms['addresss']}}</td>
+            <td>{{forms['city']}}</td>
+            <td>{{forms['state']}}</td>
+            <td>{{forms['pin']}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="inputRegno">Enter Registration Number To Delete Details</label>
+          <input type="text" class="form-control" name='stdregno' id="inputRegno" placeholder="Registration Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="btn btn-outline-info" id="sign" name="sign" type="submit" value="Delete">
+    </div>
+</form>
+{% endblock %}
