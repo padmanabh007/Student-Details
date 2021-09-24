@@ -7,8 +7,8 @@
   
   
   #### LOGIN PAGE ####
-  ![](www.github.com/padmanabh007/Student-Management/img/login.png)
+  ![](/img/login.png)
   <br>
   
   #### REGISTRATION PAGE ####
-  ![](www.github.com/padmanabh007/Student-Management/img/register.png)
+  ![](/img/register.png)
