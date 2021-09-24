@@ -7,8 +7,8 @@
   
   
   #### LOGIN PAGE ####
-  ![](img/Screenshot (75).png)
+  ![](Student-Management/img/Screenshot (75).png)
   <br>
   
   #### REGISTRATION PAGE ####
-  ![](img/Screenshot (76).png)
+  ![](Student-Management/img/Screenshot (76).png)
