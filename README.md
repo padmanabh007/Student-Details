@@ -1,14 +1,14 @@
 # Student Management System
 
   >Website helps to store student details.<br/>
-  >Developed Using Flask,HTML and Bootstrap.
-  >Used MySQL database to store the details.
+  >Developed Using Flask,HTML and Bootstrap.<br/>
+  >Used MySQL database to store the details.<br/>
   >Deployed Successfully in Azure(App is no longer available) .
   
   
   #### LOGIN PAGE ####
-  ![](Student-Management/img/Screenshot (75).png)
+  ![](www.github.com/padmanabh007/Student-Management/img/Screenshot (75).png)
   <br>
   
   #### REGISTRATION PAGE ####
-  ![](Student-Management/img/Screenshot (76).png)
+  ![](www.github.com/padmanabh007/Student-Management/img/Screenshot (76).png)
