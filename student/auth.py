@@ -89,4 +89,4 @@ def logout():
 def adminlogout():
     session.pop('id', None)
     flash("You have been logged out sucessfully.....")
-    return redirect(url_for('auth.adminlogin'))
+    return redirect(url_for('auth.admin'))
