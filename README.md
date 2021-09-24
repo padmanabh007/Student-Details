@@ -7,8 +7,8 @@
   
   
   #### LOGIN PAGE ####
-  ![](img/Screensot (75).png)
+  ![alt text](img/Screenshot(75).png)
   <br>
   
   #### REGISTRATION PAGE ####
-  ![](img/Screenshot (76).png)
+  ![alt text](img/Screenshot(76).png)
