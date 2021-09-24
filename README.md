@@ -6,9 +6,9 @@
   >Deployed Successfully in Azure(App is no longer available) .
   
   
-  ###LOGIN PAGE###
-  ![](img/screensot[75].png)
+  ### LOGIN PAGE ###
+  ![](img/Screensot(75).png)
   <br>
   
-  ###REGISTRATION PAGE###
-  ![](img/cscreenshot[76].png)
+  ### REGISTRATION PAGE ###
+  ![](img/Screenshot(76).png)
