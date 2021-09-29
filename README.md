@@ -1,4 +1,4 @@
-[![CodeQL](https://github.com/padmanbh007/Student-Mangement/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/padmanab007/Student-Managemnt/actions/workflows/codeql-analysis.yml)
+
 # Student Management System
 
   >Website helps to store student details.<br/>
