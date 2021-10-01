@@ -41,7 +41,7 @@ def edit(idn):
         city = request.form.get('stdcity')
         state = request.form.get('stdstate')
         pin = request.form.get('stdpin')
-        query = """UPDATE student.student SET regno = %s,name = %s,parentname = %s,age = %s,DOB = %s,department = %s,presentsem = %s,avggpa = %s,phonenum = %s,addresss = %s,city = %s,state = %s,PIN = %s WHERE id = %s"""
+        query = """UPDATE student.student SET regno = %s,name = %s,parentname = %s,age = %s,DOB = %s,department = %s,presentsem = %s,avggpa = %s,phonenum = %s,address = %s,city = %s,state = %s,PIN = %s WHERE id = %s"""
         data = (regno,name,pname,age,dob,dept,sem,avggpa,pho,add,city,state,pin,idn,)
         c.execute(query,data)
         db.connection.commit()
