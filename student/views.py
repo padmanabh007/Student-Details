@@ -3,7 +3,7 @@ from . import db
 
 views = Blueprint('views',__name__)
 
-@views.route('/view/<idn>',methods = [ 'POST','GET'])
+@views.route('/login/view/<idn>',methods = [ 'POST','GET'])
 def view(idn):
     if not session.get('id'):
         flash("Login to access ..........")
@@ -19,7 +19,7 @@ def view(idn):
     return render_template("view.html",title = "details",form = data)
 
 
-@views.route('/edit/<idn>',methods = ['POST','GET'])
+@views.route('/register/edit/<idn>',methods = ['POST','GET'])
 def edit(idn):
     if not session.get('id') :
         flash("Login to access ..........")
@@ -51,7 +51,7 @@ def edit(idn):
 
     return render_template("edit.html",title = "update")
 
-@views.route('/sedit/<idn>',methods = ['GET','POST'])
+@views.route('/login/sedit/<idn>',methods = ['GET','POST'])
 def sedit(idn):
     if not session.get('id'):
         flash("Login to access ..........")
@@ -82,7 +82,7 @@ def sedit(idn):
 
     return render_template('sedit.html',title = 'change',form = data)
 
-@views.route('/full/', methods=['GET', 'POST'])
+@views.route('/admin/full/', methods=['GET', 'POST'])
 def full():
     if not session.get('id') or session.get('id') != 'Admin':
         flash('Admin should login to view this page')
@@ -96,7 +96,7 @@ def full():
         db.connection.commit()
         c.close()
         flash('Details deleted successfully !!')
-        return redirect(url_for('admin.htmil'))
+        return redirect(url_for('admin.html'))
     return render_template('admin.html',title='Full details',form=data)
     
 
