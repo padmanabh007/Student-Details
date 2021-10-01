@@ -58,7 +58,7 @@ def register():
             session['id']=idn['id']
             #login_user(idn['id'])
             flash('Fill this form to complete your registration')
-            return redirect(url_for("views.edit",idn = idn))
+            return redirect(url_for("views.edit",idn = idn['id']))
         c.close()
         
     return render_template('register.html',title = 'register',form = forms)
