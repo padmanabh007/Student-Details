@@ -1,3 +1,4 @@
+[![Build and deploy Python app to Azure Web App - stud](https://github.com/padmanabh007/Student-Management/actions/workflows/main_stud.yml/badge.svg)](https://github.com/padmanabh007/Student-Management/actions/workflows/main_stud.yml)
 
 # Student Management System
 
