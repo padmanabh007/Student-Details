@@ -18,9 +18,7 @@ def login():
         query = """SELECT password FROM student.student WHERE email = %s"""
         c.execute(query,(email,))
         pass_word = c.fetchone()
-        print(pass_word)
-        #print(check_password_hash(pass_word['password'],password))
-        if check_password_hash(pass_word["password"], password) :
+        if pass_word and check_password_hash(pass_word["password"], password) :
 
             c.execute("""SELECT id FROM student.student WHERE email = %s""",(email,))
             idn  =  c.fetchone()
@@ -30,7 +28,7 @@ def login():
             return redirect(url_for("views.view",idn = idn["id"]))
 
         else: 
-            flash("Incorrect Email or Password",category="error")
+            flash("Invalid Email or Password",category="error")
         c.close()
 
     return render_template('login.html',title = 'loginpage',form = forms)
@@ -75,7 +73,7 @@ def admin():
             flash('Login Sucessfull',category='success')
             return redirect(url_for('views.full'))
         else:
-            flash('Incorrect userid or password',category='error')
+            flash('Invalid userid or password',category='error')
     return render_template('adminlogin.html',title='admin',form=form)
 
 @auth.route('/logout',methods=[ 'POST', 'GET']) 
