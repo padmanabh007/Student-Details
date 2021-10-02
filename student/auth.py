@@ -18,18 +18,19 @@ def login():
         query = """SELECT password FROM student.student WHERE email = %s"""
         c.execute(query,(email,))
         pass_word = c.fetchone()
-        print(check_password_hash(pass_word['password'],password))
-        if check_password_hash(pass_word['password'], password) :
+        print(pass_word)
+        #print(check_password_hash(pass_word['password'],password))
+        if check_password_hash(pass_word["password"], password) :
 
             c.execute("""SELECT id FROM student.student WHERE email = %s""",(email,))
             idn  =  c.fetchone()
-            flash('Logged in Successfully',"success")
+            flash('Logged in Successfully',category="success")
             session['id']=idn['id']
             #login_user(idn['id'])
             return redirect(url_for("views.view",idn = idn["id"]))
 
         else: 
-            flash("Incorrect Email or Password","danger")
+            flash("Incorrect Email or Password",category="error")
         c.close()
 
     return render_template('login.html',title = 'loginpage',form = forms)
@@ -47,7 +48,7 @@ def register():
         id1  =  c.fetchone()
 
         if id1:
-            flash("Email Id already exists","danger")
+            flash("Email Id already exists",category="error")
         else:
 
             query = """INSERT INTO student.student (email,password) VALUES (%s, %s)"""
@@ -57,13 +58,13 @@ def register():
             idn = c.fetchone()
             session['id']=idn['id']
             #login_user(idn['id'])
-            flash('Fill this form to complete your registration')
+            flash('Fill this form to complete your registration',category='success')
             return redirect(url_for("views.edit",idn = idn['id']))
         c.close()
         
     return render_template('register.html',title = 'register',form = forms)
 
-@auth.route('/admin',methods=['POST', 'GET'])
+@auth.route('/admin/',methods=['POST', 'GET'])
 def admin():
     form = AdminLogin()
     if request.method == 'POST' or form.validate_on_submit():
@@ -80,13 +81,13 @@ def admin():
 @auth.route('/logout',methods=[ 'POST', 'GET']) 
 def logout():
     session.pop('id', None)
-    flash("You have been logged out sucessfully.....")
+    flash("You have been logged out sucessfully.....",category='success')
     return redirect(url_for('auth.login'))
 
 @auth.route('/adminlogout',methods=[ 'POST', 'GET']) 
 def adminlogout():
     session.pop('id', None)
-    flash("You have been logged out sucessfully.....")
+    flash("You have been logged out sucessfully.....",category='success')
     return redirect(url_for('auth.admin'))
 
 
