@@ -70,13 +70,13 @@ def sedit(idn):
         state = request.form.get('stdstate')
         pin = request.form.get('stdpin')
 
-        query = """UPDATE student.student SET department = %s,presentsem = %s,avggpa = %s,addresss = %s,city = %s,state = %s,PIN = %s WHERE id = %s"""
+        query = """UPDATE student.student SET department = %s,presentsem = %s,avggpa = %s,address = %s,city = %s,state = %s,PIN = %s WHERE id = %s"""
         data = (dept,sem,avggpa,add,city,state,pin,idn,)
         cur.execute(query,data)
         db.connection.commit()
         cur.close()
 
-        flash('Details Updated !!! Login Again')
+        flash('Details Updated !!! Login Again',category='success')
         return redirect(url_for('auth.login'))
     cur.close()
 
@@ -95,8 +95,7 @@ def full():
         c.execute('''DELETE FROM student.student WHERE regno = %s''',(regno,))
         db.connection.commit()
         c.close()
-        flash('Details deleted successfully !!')
-        return redirect(url_for('admin.html'))
+        flash('Details deleted successfully !!',category='success')
+        return redirect(url_for('views.full'))
     return render_template('admin.html',title='Full details',form=data)
-    
-
+   
