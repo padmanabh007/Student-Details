@@ -7,10 +7,22 @@
   * Used MySQL database to store the details.<br/>
   * Deployed Successfully in Azure.
   
-  
+                        # PAGES
   #### LOGIN PAGE ####
-  ![](/img/login.png)
+  ![](/img/Login.png)
   <br>
   
   #### REGISTRATION PAGE ####
-  ![](/img/register.png)
+  ![](/img/Register.png)
+  
+  #### ADMIN LOGIN ###
+  ![](/img/Admin Login.png)
+  
+  ### DETAILS PAGE ###
+  ![](/img/Details.png)
+  
+  ### DETAILS UPDATE ###
+  ![](/img/Update.png)
+  
+  ### DETAILS OF ALL STUDNETS ###
+  ![](/img/Admin.png)
