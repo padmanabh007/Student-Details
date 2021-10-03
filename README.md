@@ -7,7 +7,7 @@
   * Used MySQL database to store the details.<br/>
   * Deployed Successfully in Azure.
   
-                        # PAGES
+ #                                              PAGES
   #### LOGIN PAGE ####
   ![](/img/Login.png)
   <br>
