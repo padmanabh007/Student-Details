@@ -16,7 +16,7 @@
   ![](/img/Register.png)
   
   #### ADMIN LOGIN ###
-  ![](/img/Admin Login.png)
+  ![](/img/AdminLogin.png)
   
   ### DETAILS PAGE ###
   ![](/img/Details.png)
